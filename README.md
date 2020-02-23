@@ -2,6 +2,6 @@
 
 column-profiling - 
 
-data-inspect - 
+file-inspection - basic file inspection 
 
-indice-matrix - create a graph of edges given two ids
+indice-matrix - creates a matrix of edges given two ids columns
