@@ -8,7 +8,7 @@ def read_first_line(fname):
     :return:
     """
     data =[]
-    with open(filename, "r") as data_file:
+    with open(fname, "r") as data_file:
         line = data_file.readline()
         data = line.strip().split()
     return data  
