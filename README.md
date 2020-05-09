@@ -2,10 +2,10 @@
 
 column-profiling - 
 
-file-inspection - basic file inspection 
+file-inspection.py - basic file inspection 
 
-indice-matrix - creates a matrix of edges given two ids columns
+indice-matrix.py - creates a matrix of edges given two ids columns
 
 # machine-learning-util
 
-mean-encoding-regularization - regularization strategies for mean encoded categorical variables
+mean-encoding-regularization.py - regularization strategies for mean encoded categorical variables
