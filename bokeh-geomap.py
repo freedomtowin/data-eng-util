@@ -4,13 +4,17 @@ import geopandas as gpd
 shp_df_cnty = gpd.read_file('data/cb_2019_us_county_500k/cb_2019_us_county_500k.shp')
 shp_df_zip = gpd.read_file('data/cb_2019_us_zcta510_500k/cb_2019_us_zcta510_500k.shp')
 shp_df_st = gpd.read_file('data/cb_2019_us_state_500k/cb_2019_us_state_500k.shp')
+shp_df_pl = gpd.read_file('data/cb_2019_us_place_500k/cb_2019_us_place_500k.shp')
+shp_df_tr = gpd.read_file('data/cb_2019_us_tract_500k/cb_2019_us_tract_500k.shp')
 
 shp_df_st.head()
 
 shp_df_st = shp_df_st[['STATEFP','STUSPS']].rename(columns={'STUSPS':'ST_NAME'})
 shp_df_cnty = shp_df_cnty.merge(shp_df_st, on='STATEFP')
+shp_df_tr = shp_df_tr.merge(shp_df_st, on='STATEFP')
 
 shp_df_cnty = shp_df_cnty.loc[~shp_df_cnty['ST_NAME'].isin(['AK', 'HI','PR'])]
+shp_df_tr = shp_df_tr.loc[~shp_df_tr['ST_NAME'].isin(['AK', 'HI','PR'])]
 
 import json
 from bokeh.io import show
@@ -69,3 +73,14 @@ p.add_tools(HoverTool(renderers = [states],
 p.add_layout(color_bar, 'below')
 
 show(p)
+
+
+#check to see which census tract a location is in
+from shapely.geometry import Point, Polygon
+lat,long = -80,40
+
+pnt = Point(lat, long)
+
+for i in shp_df_tr.index:
+    if pnt.within(shp_df_tr.loc[i,'geometry'])==True:
+        print(shp_df_tr.loc[i,'TRACTCE'])
