@@ -1,6 +1,7 @@
 # Import geopandas package
 import geopandas as gpd
 # Read in shapefile and examine data
+# https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
 shp_df_cnty = gpd.read_file('data/cb_2019_us_county_500k/cb_2019_us_county_500k.shp')
 shp_df_zip = gpd.read_file('data/cb_2019_us_zcta510_500k/cb_2019_us_zcta510_500k.shp')
 shp_df_st = gpd.read_file('data/cb_2019_us_state_500k/cb_2019_us_state_500k.shp')
