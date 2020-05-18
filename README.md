@@ -14,4 +14,4 @@ mean-encoding-regularization.py - regularization strategies for mean-encoded cat
 
 # Geospatial
 
-bokeh-geomap.py - read a .shp file with geopandas and plots it with bokeh (https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html)
+bokeh-geomap.py - read a .shp file with geopandas and plots it with bokeh
