@@ -6,7 +6,7 @@ file-inspection.py - basic file inspection
 
 indice-matrix.py - creates a matrix of edges given two ids columns
 
-ipyparallel-pandas.py - parallelize pandas dataframe
+ipyparallel-pandas.py - parallelize pandas dataframe with ipyparallel
 
 # machine-learning-util
 
