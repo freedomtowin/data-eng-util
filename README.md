@@ -2,8 +2,6 @@
 
 # Pandas
 
-column-profiling - 
-
 file-inspection.py - basic file inspection 
 
 indice-matrix.py - creates a matrix of edges given two ids columns, can be used to assess connection strength between entities
