@@ -4,7 +4,7 @@
 
 file-inspection.py - basic file inspection 
 
-indice-matrix.py - creates a matrix of edges given two ids columns, can be used to assess connection strength between entities
+indice-matrix.py - creates a sparse matrix of edges (connections) between two ID columns
 
 ipyparallel-pandas.py - parallelize pandas dataframe with ipyparallel
 
@@ -14,4 +14,4 @@ mean-encoding-regularization.py - regularization strategies for mean-encoded cat
 
 # Geospatial
 
-bokeh-geomap.py - read a .shp file with geopandas and plots it with bokeh
+bokeh-geomap.py - read a .shp file with geopandas and plots it with bokeh, finds census tract for location 
