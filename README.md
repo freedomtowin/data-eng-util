@@ -1,6 +1,6 @@
 # Archive of Utilities For Data Engineering
 
-# pandas-util
+# Pandas
 
 column-profiling - 
 
@@ -10,10 +10,10 @@ indice-matrix.py - creates a matrix of edges given two ids columns, can be used 
 
 ipyparallel-pandas.py - parallelize pandas dataframe with ipyparallel
 
-# machine-learning-util
+# Machine Learning
 
 mean-encoding-regularization.py - regularization strategies for mean-encoded categorical variables
 
-# Geospatial Mapping
+# Geospatial
 
 bokeh-geomap.py - read a .shp file with geopandas and plots it with bokeh (https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html)
