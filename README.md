@@ -16,4 +16,4 @@ tf-gradient-tape-example.py - tensorflow backend to create custom training workf
 
 # Geospatial
 
-bokeh-geomap.py - read a .shp file with geopandas and plots it with bokeh, finds census tract for location 
+[bokeh-geomap.py](https://github.com/freedomtowin/data-eng-util/blob/master/bokeh-geomap.py) - read a .shp file with geopandas and plots it with bokeh, finds census tract for location 
