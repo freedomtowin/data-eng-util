@@ -14,6 +14,8 @@ file-inspection.py - basic file inspection
 
 [tf-gradient-tape-example.py](https://github.com/freedomtowin/data-eng-util/blob/master/tf-gradient-tape-example.py) - tensorflow backend to create custom training workflows with tensorflow datasets 
 
+[load-pretrained-glove.py ](https://github.com/freedomtowin/data-eng-util/blob/master/load-pretrained-glove.py) - loaf GolVe (NLP) pre-trained word embedding features/
+
 # Geospatial
 
 [bokeh-geomap.py](https://github.com/freedomtowin/data-eng-util/blob/master/bokeh-geomap.py) - read a .shp file with geopandas and plots it with bokeh, finds census tract for location 
