@@ -8,6 +8,8 @@ file-inspection.py - basic file inspection
 
 [ipyparallel-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/ipyparallel-pandas.py) - parallelize pandas dataframe with ipyparallel
 
+[alphavantage-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/alphavantage-data-api.py) - download multiple daily stock elements from the alphavantage api into a pandas dataframe
+
 # Machine Learning
 
 [mean-encoding-regularization.py](https://github.com/freedomtowin/data-eng-util/blob/master/mean-encoding-regularization.py) - regularization strategies for mean-encoded categorical variables
