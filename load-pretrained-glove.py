@@ -10,6 +10,7 @@ def loadGloveModel(gloveFile):
         model[word] = embedding
     return model
 
+#https://nlp.stanford.edu/projects/glove/
 glv = loadGloveModel('glove/glove.6B.50d.txt')
 
 import pandas as pd
