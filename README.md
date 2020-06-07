@@ -10,6 +10,8 @@ file-inspection.py - basic file inspection
 
 [alphavantage-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/alphavantage-data-api.py) - download multiple daily stock elements from the alphavantage api into a pandas dataframe
 
+[twitter-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/twitter-data-api.py) - download twitter feed from specific authors into a pandas dataframe
+
 # Machine Learning
 
 [mean-encoding-regularization.py](https://github.com/freedomtowin/data-eng-util/blob/master/mean-encoding-regularization.py) - regularization strategies for mean-encoded categorical variables
