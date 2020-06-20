@@ -9,7 +9,7 @@ data = np.ones(coords.shape[0])
 
 import scipy
 
-scoo = scipy.sparse.coo_matrix((data, (coords.FirstId.values.ravel(), coords.SecondId.values.ravel()))
+inc_mat = scipy.sparse.coo_matrix((data, (coords.FirstId.values.ravel(), coords.SecondId.values.ravel()))
                         ,(maxId+1, maxId+1), dtype=np.int8 ) 
                         
 
