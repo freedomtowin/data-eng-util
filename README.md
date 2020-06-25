@@ -22,4 +22,6 @@ file-inspection.py - basic file inspection
 
 # Geospatial
 
-[bokeh-geomap.py](https://github.com/freedomtowin/data-eng-util/blob/master/bokeh-geomap.py) - read a .shp file with geopandas and plots it with bokeh, finds census tract for location 
+[bokeh-geomap.py](https://github.com/freedomtowin/data-eng-util/blob/master/bokeh-geomap.py) - read a .shp file with geopandas and plot it with bokeh, finds census tract for location 
+
+[maxbox-geoencoding.py](https://github.com/freedomtowin/data-eng-util/blob/master/maxbox-geoencoding.py) - geoencoding using the MapBox API
