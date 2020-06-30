@@ -2,9 +2,7 @@
 
 # Pandas
 
-file-inspection.py - basic file inspection 
-
-[indice-matrix.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandasindice-matrix.py) - creates a sparse matrix of edges (connections) between two ID columns
+[indice-matrix.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandas/indice-matrix.py) - creates a sparse matrix of edges (connections) between two ID columns
 
 [ipyparallel-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandas/ipyparallel-pandas.py) - parallelize pandas dataframe with ipyparallel
 
