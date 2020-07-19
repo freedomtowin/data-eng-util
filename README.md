@@ -1,14 +1,16 @@
 # Utilities For Data Engineering
 
-# Pandas
+# Data Processing
 
-[indice-matrix.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandas/indice-matrix.py) - creates a sparse matrix of edges (connections) between two ID columns
+[indice-matrix.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/indice-matrix.py) - creates a sparse matrix of edges (connections) between two ID columns
 
-[ipyparallel-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandas/ipyparallel-pandas.py) - parallelize pandas dataframe with ipyparallel
+[ipyparallel-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/ipyparallel-pandas.py) - parallelize pandas dataframe with ipyparallel
 
-[alphavantage-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandas/alphavantage-data-api.py) - download multiple daily stock elements from the alphavantage api into a pandas dataframe
+[alphavantage-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/alphavantage-data-api.py) - download multiple daily stock elements from the alphavantage api into a pandas dataframe
 
-[twitter-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/pandas/twitter-data-api.py) - download twitter feed from specific authors into a pandas dataframe
+[twitter-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/twitter-data-api.py) - download twitter feed from specific authors into a pandas dataframe
+
+[multiprocessing-numpy-generator-function.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/multiprocessing-numpy-generator-function.py) - process a numpy array in parallel with a generator function 
 
 # Machine Learning
 
