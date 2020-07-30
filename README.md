@@ -2,7 +2,7 @@
 
 # Data Processing
 
-[indice-matrix.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/indice-matrix.py) - creates a sparse matrix of edges (connections) between two ID columns
+[coordinate-matrices.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/coordinate-matrices.py) - create a sparse matrix of edges (connections) between two ID columns, create an index column dataframe for multiple id fields
 
 [ipyparallel-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/ipyparallel-pandas.py) - parallelize pandas dataframe with ipyparallel
 
@@ -11,6 +11,8 @@
 [twitter-data-api.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/twitter-data-api.py) - download twitter feed from specific authors into a pandas dataframe
 
 [multiprocessing-numpy-generator-function.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/multiprocessing-numpy-generator-function.py) - process a numpy array in parallel with a generator function 
+
+[type-casting-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/type-casting-pandas.py) - functions to pre-processing types in pandas dataframe
 
 # Machine Learning
 
