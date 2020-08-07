@@ -59,7 +59,8 @@ for n in range(item_df.shape[0]):
                 embed[n,i] = embed[n,i] + (glv[word][i])/gram_cnt
               
     norm = np.sum(embed[n]**2)
+    
     if norm==0:
         continue
         
-    embed[n] = embed[n]/np.sum(embed[n]**2)
+    embed[n] = embed[n]/np.sqrt(norm)
