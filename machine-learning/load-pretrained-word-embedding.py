@@ -1,3 +1,5 @@
+
+#load GloVe
 def loadGloveModel(gloveFile):
     f = open(gloveFile,'rb')
     model = {}
@@ -13,6 +15,30 @@ def loadGloveModel(gloveFile):
 #https://nlp.stanford.edu/projects/glove/
 glv = loadGloveModel('glove/glove.6B.50d.txt')
 
+
+#FastText
+"""
+# import io
+
+# def load_vectors(fname):
+#     fin = io.open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
+#     n, d = map(int, fin.readline().split())
+#     data = {}
+#     for line in fin:
+#         tokens = line.rstrip().split(' ')
+#         word = tokens[0]
+        
+#         if word!=word.lower() and len(word)>1:
+#             continue
+#         data[tokens[0]] = list(map(float, tokens[1:]))
+        
+#     return data
+#https://fasttext.cc/docs/en/pretrained-vectors.html
+# russion_w2v_file = os.path.join(DATA_FOLDER, 'wiki.ru.vec')
+# russion_w2v = load_vectors(russion_w2v_file)
+"""
+
+
 import pandas as pd
 import numpy as np
 items = ['dog cat  ',
@@ -22,7 +48,7 @@ item_df = pd.DataFrame()
 
 item_df['item'] = items
 
-#removing un-necesarry spacs
+#removing un-necessary spacs
 def remove_dup_spaces(x):
     lenx = len(x)
     count = 0
@@ -38,8 +64,8 @@ def remove_dup_spaces(x):
     return x.strip()
 
 item_df.item = item_df.item.apply(lambda x: remove_dup_spaces(x))
-item_df.item
 
+#get the output embedding layer
 import re
 embed = np.zeros((item_df.shape[0],50))
 
