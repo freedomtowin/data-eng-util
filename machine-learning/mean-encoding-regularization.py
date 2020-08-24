@@ -1,45 +1,109 @@
-#KFold_scheme
-for tridx,tsidx in kf.split(all_data['target']):
-    print(tridx)
-    mean = all_data.loc[tsidx,'item_id'].map(all_data.loc[tridx].groupby('item_id').target.mean())
+mean_enc_cols = ['shop_id', 'item_id', 'item_category_id', 'super_item_category_id']
+
+def kfold_mean_enc(df,gb_col,target_name='item_cnt_month'):
+    #KFold_scheme
+    kf = model_selection.KFold(5)
+    
+    global_mean = df[target_name].mean()
+    
+    gb_col_rename = gb_col+'_kfold_target_enc'
+    
+    mean_enc_df = pd.DataFrame(index=df.index)
+    mean_enc_df[target_name] = df[target_name]
+    
+    for tridx,tsidx in kf.split(df[target_name]):
+        fkold_mean = df.loc[tsidx,gb_col].map(df.loc[tridx].groupby(gb_col)[target_name].mean())
+        mean_enc_df.loc[tsidx,gb_col_rename] = fkold_mean
+        gc.collect()
+
+    encoded_feature = mean_enc_df[gb_col_rename].fillna(global_mean)
+    corr = np.corrcoef(mean_enc_df[target_name].values, encoded_feature.values)[0][1]
+    print('kfold {} mean encoding correlation {}'.format(gb_col,corr))
+    return encoded_feature
+
+
+def loo_mean_enc(df,gb_col,target_name='item_cnt_month'):
+    #KFold_scheme
+    kf = model_selection.KFold(5)
+    
+    global_mean = df[target_name].mean()
+    
+    gb_col_rename = gb_col+'_loo_target_enc'
+    
+    mean_enc_df = pd.DataFrame(index=df.index)
+    mean_enc_df[target_name] = df[target_name]
+    
+    
+    cnt=df.groupby(gb_col)[target_name].transform('count')
+    mean_enc_df[gb_col_rename] = df.groupby(gb_col)[target_name].transform('sum')
+    mean_enc_df[gb_col_rename] = (mean_enc_df[gb_col_rename] - mean_enc_df[target_name])/(cnt-1)
+    encoded_feature = mean_enc_df[gb_col_rename]
     gc.collect()
-    all_data.loc[tsidx,'item_target_enc'] = mean
+    
+    corr = np.corrcoef(mean_enc_df[target_name].values, encoded_feature.values)[0][1]
+    print('kfold {} loo encoding correlation {}'.format(gb_col_rename,corr))
+    return encoded_feature
+
+def smoothing_mean_enc(df,gb_col,alpha=100,target_name='item_cnt_month'):
+    #KFold_scheme
+    kf = model_selection.KFold(5)
+    
+    global_mean = df[target_name].mean()
+    
+    gb_col_rename = gb_col+'_smooth_target_enc'
+    
+    mean_enc_df = pd.DataFrame(index=df.index)
+    mean_enc_df[target_name] = df[target_name]
+    
+    
+    gb_cnt=df.groupby(gb_col)[target_name].transform('count')
+
+    gb_mean = df.groupby(gb_col)[target_name].transform('mean')
+
+    mean_target_enc = (gb_mean*gb_cnt + global_mean*alpha)/(gb_cnt+alpha)
+    
+    mean_enc_df[gb_col_rename] = mean_target_enc
     gc.collect()
 
-encoded_feature = all_data['item_target_enc'].fillna(0.3343).values
-corr = np.corrcoef(all_data['target'].values, encoded_feature)[0][1]
-print(corr)
+    encoded_feature = mean_enc_df[gb_col_rename].fillna(global_mean)
+    corr = np.corrcoef(mean_enc_df[target_name].values, encoded_feature.values)[0][1]
+    print('kfold {} smoothing encoding correlation {} alpha {}'.format(gb_col_rename,corr,alpha))
+    return encoded_feature
 
-#Leave-one-out_scheme
-cnt=all_data.groupby('item_id')['target'].transform('count') 
-all_data['item_target_enc'] = all_data.groupby('item_id')['target'].transform('sum')    
-all_data['item_target_enc'] = (all_data['item_target_enc'] - all_data['target'])/(cnt-1)
-encoded_feature = all_data['item_target_enc'].values
-corr = np.corrcoef(all_data['target'].values, encoded_feature)[0][1]
-print(corr)
+def expanding_mean_enc(df,gb_col,target_name='item_cnt_month'):
+    #KFold_scheme
+    kf = model_selection.KFold(5)
+    
+    global_mean = df[target_name].mean()
+    
+    gb_col_rename = gb_col+'_expanding_target_enc'
+    
+    mean_enc_df = pd.DataFrame(index=df.index)
+    mean_enc_df[target_name] = df[target_name]
+    
+    
+    cumsum = df.groupby(gb_col)[target_name].cumsum() - df[target_name]
+    cumcnt = df.groupby(gb_col).cumcount()
+    mean_enc_df[gb_col_rename] = cumsum/cumcnt
 
+    encoded_feature = mean_enc_df[gb_col_rename].fillna(global_mean)
+    
+    corr = np.corrcoef(mean_enc_df[target_name].values, encoded_feature.values)[0][1]
+    print('kfold {} expanding encoding correlation {}'.format(gb_col_rename,corr))
+    return encoded_feature
 
-#Smoothing_scheme
-global_mean = 0.3343
-alpha=100
-cnt=all_data.groupby('item_id')['target'].transform('count') 
+"""
+#The expanding mean schema had the highest correlation to the item count month
 
-mean = all_data.groupby('item_id')['target'].transform('mean')
-cnt=all_data.groupby('item_id')['target'].transform('count') 
+mean_enc_result = list(map(lambda x: kfold_mean_enc(train,x),mean_enc_cols))
+print()
+mean_enc_result += list(map(lambda x: loo_mean_enc(train,x),mean_enc_cols))
+print()
+mean_enc_result += list(map(lambda x: smoothing_mean_enc(train,x,alpha=10),mean_enc_cols))
+print()
+mean_enc_result += list(map(lambda x: expanding_mean_enc(train,x),mean_enc_cols))
+"""
 
-item_target_enc = (mean*cnt + global_mean*alpha)/(cnt+alpha)
-gc.collect()
-all_data.loc[:,'item_target_enc'] = item_target_enc
-
-encoded_feature = all_data['item_target_enc'].fillna(0.3343).values
-corr = np.corrcoef(all_data['target'].values, encoded_feature)[0][1]
-print(corr)
-
-#Expanding_mean_scheme
-cumsum = all_data.groupby('item_id')['target'].cumsum() - all_data['target']
-cumcnt = all_data.groupby('item_id').cumcount()
-all_data['item_target_enc'] = cumsum/cumcnt
-
-encoded_feature = all_data['item_target_enc'].fillna(0.3343).values
-corr = np.corrcoef(all_data['target'].values, encoded_feature)[0][1]
-print(corr)
+#
+mean_enc_result = list(map(lambda x: expanding_mean_enc(train,x),mean_enc_cols))
+mean_enc_result = pd.concat(mean_enc_result,axis=1)
