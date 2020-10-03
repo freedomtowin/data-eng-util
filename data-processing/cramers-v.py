@@ -32,21 +32,5 @@ f = rows_FirstId.multiply(rows_SecondId).sum(axis=1)
 
 val,cnts = np.unique(f.A,return_counts=True)
 
-"""
-expand out rows for multiple id columns and a time-based index column
-"""
-
-index_cols = ['shop_id', 'item_id', 'date_block_num']
-
-# For every month we create a grid from all shops/items combinations for the date_block_num
-grid = []
-for block_num in sales['date_block_num'].unique():
-    cur_shops = sales.loc[sales['date_block_num'] == block_num, 'shop_id'].unique()
-    cur_items = sales.loc[sales['date_block_num'] == block_num, 'item_id'].unique()
-    grid.append(np.array(list(product(*[cur_shops, cur_items, [block_num]])),dtype='int32'))
-
-# Turn the grid into a dataframe, it will have all three of the id columns
-grid = pd.DataFrame(np.vstack(grid), columns = index_cols,dtype=np.int32)
-
 
 

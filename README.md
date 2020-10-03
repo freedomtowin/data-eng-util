@@ -14,6 +14,9 @@
 
 [type-casting-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/type-casting-pandas.py) - functions to pre-processing types in pandas dataframe
 
+[cramers-v.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/cramers-v.py) - Cramer's V, measure of associated between nominal variables.
+
+
 # Machine Learning
 
 [mean-encoding-regularization.py](https://github.com/freedomtowin/data-eng-util/blob/master/machine-learning/mean-encoding-regularization.py) - regularization strategies for mean-encoded categorical variables
