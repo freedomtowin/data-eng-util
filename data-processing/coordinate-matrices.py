@@ -1,4 +1,7 @@
-"""create a coordinate matrix between two id fields"""
+"""
+create a coordinate matrix between two id fields
+"""
+
 #test is a pandas dataframe
 coords = np.vstack([test[['FirstId','SecondId']].values,test[['SecondId','FirstId']].values])
 
@@ -29,7 +32,9 @@ f = rows_FirstId.multiply(rows_SecondId).sum(axis=1)
 
 val,cnts = np.unique(f.A,return_counts=True)
 
-"""create an index column dataframe for multiple id columns """
+"""
+expand out rows for multiple id columns and a time-based index column
+"""
 
 index_cols = ['shop_id', 'item_id', 'date_block_num']
 
