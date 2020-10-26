@@ -1,4 +1,6 @@
-# Utilities For Data Engineering
+# Utilities For Data Engineering and Machine Learning
+
+This repository is a compilation of script I have used in the past. All code is either original, modified version of someone else's code, or from an educational source. Credit will be given to any direct copy of someone else's work.
 
 # Data Processing
 
@@ -25,7 +27,14 @@
 
 [tf-gradient-importance.py](https://github.com/freedomtowin/data-eng-util/blob/master/machine-learning/tf-gradient-importance.py) - calculates the gradients of the output with respect to the input, feature importance
 
-[load-pretrained-glove.py ](https://github.com/freedomtowin/data-eng-util/blob/master/machine-learning/lload-pretrained-word-embedding) - load GloVe (NLP) pre-trained word embedding features, load FastText Wiki word embeddings
+# Natural Language Processing
+
+[load-pretrained-glove.py ](https://github.com/freedomtowin/data-eng-util/blob/master/nlp/load-pretrained-word-embedding) - load GloVe (NLP) pre-trained word embedding features, load FastText Wiki word embeddings
+
+# Computer Vision
+
+[video-to-frames.py]
+
 
 # Signal Processing
 
@@ -37,3 +46,4 @@
 [bokeh-geomap.py](https://github.com/freedomtowin/data-eng-util/blob/master/geospatial/bokeh-geomap.py) - read a .shp file with geopandas and plot it with bokeh, finds census tract for location 
 
 [maxbox-geoencoding.py](https://github.com/freedomtowin/data-eng-util/blob/master/geospatial/maxbox-geoencoding.py) - geoencoding using the MapBox API
+
