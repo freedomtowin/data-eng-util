@@ -29,7 +29,7 @@ This repository is a compilation of script I have used in the past. All code is 
 
 # Natural Language Processing
 
-[load-pretrained-glove.py ](https://github.com/freedomtowin/data-eng-util/blob/master/nlp/load-pretrained-word-embedding) - load GloVe (NLP) pre-trained word embedding features, load FastText Wiki word embeddings
+[load-pretrained-glove.py ](https://github.com/freedomtowin/data-eng-util/blob/master/nlp/load-pretrained-word-embedding.py) - load GloVe (NLP) pre-trained word embedding features, load FastText Wiki word embeddings
 
 # Computer Vision
 
