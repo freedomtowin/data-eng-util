@@ -4,7 +4,7 @@ This repository is a compilation of script I have used in the past. All code is 
 
 # Data Processing
 
-[coordinate-matrices.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/coordinate-matrices.py) - create a sparse matrix of edges (connections) between two ID columns, create an index column dataframe for multiple id fields
+[coordinate-matrix-ops.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/coordinate-matrix-ops.py) - create a sparse matrix of edges (connections) between two ID columns, create an index column dataframe for multiple id fields
 
 [ipyparallel-pandas.py](https://github.com/freedomtowin/data-eng-util/blob/master/data-processing/ipyparallel-pandas.py) - parallelize pandas dataframe with ipyparallel
 
