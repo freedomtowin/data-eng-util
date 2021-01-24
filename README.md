@@ -31,6 +31,8 @@ This repository is a compilation of script I have used in the past. All code is 
 
 [load-pretrained-glove.py ](https://github.com/freedomtowin/data-eng-util/blob/master/nlp/load-pretrained-word-embedding.py) - load GloVe (NLP) pre-trained word embedding features, load FastText Wiki word embeddings
 
+[text_preprocessing_lstm.py](https://github.com/freedomtowin/data-eng-util/blob/master/nlp/load-pretrained-word-embedding.py) - Text tokenization, sequence, and padding for LSTM modeling using TensorFlow
+
 # Computer Vision
 
 [video-to-frames.py]
