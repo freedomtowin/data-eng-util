@@ -1,0 +1,10 @@
+docker build . -t python-grpc-example
+docker run --rm -d -p 50051:50051 --name grpc-example python-grpc-example
+docker cp . grpc-example:/root/
+docker commit -m 'commit c' grpc-example
+docker kill grpc-example
+docker run --rm -d -p 50051:50051 --name grpc-example python-grpc-example
+
+
+docker build . -t python-grpc-image
+docker run --rm -d -p 50051:50051 --name grpc-example python-grpc-example

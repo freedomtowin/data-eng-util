@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  
+  rpc CallModel (DoubleMatrix) returns (ModelResult) {}
+}
+
+// The response message containing the greetings
+message ModelResult {
+  string message = 1;
+}
+
+
+message DoubleMatrix {
+  int32  rows = 1;
+  
+  int32  cols = 2;
+  
+  int32 channels = 3;
+  
+  repeated double data = 4 [packed=true];
+}
