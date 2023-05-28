@@ -1,33 +1,7 @@
 # ignore vscode directory
 .vscode
 .DS_Store
-*.env
-*.lock
 
-# ignore jupyter files
-jupyter
-jupyter/*
-*.ipynb
-.ipynb_checkpoints
-
-# ignore test csv result files
-./db/results
-db/old_results/*
-db/results/*
-./db/*.ipynb
-./db/.ipynb_checkpoints
-./db/*.csv
-
-# ignore html directory
-html
-html/*
-# ignore pyc files
-*.pyc
-src/*.pyc
-# ignore .env file
-.env
-# ignore dev files
-./src/queue.py
-main_dev.py
-# ignore pyenv python version file
-.python-version
+aws-automated-webscraper-kinesis/environment.env
+aws-automated-webscraper-kinesis/src/__pycache__/*
+aws-automated-webscraper-kinesis/Pipfile.lock
