@@ -2,6 +2,6 @@
 .vscode
 .DS_Store
 
-./aws-automated-webscraper-kinesis/environment.env
+/aws-automated-webscraper-kinesis/environment.env
 ./aws-automated-webscraper-kinesis/src/__pycache__/*
-./aws-automated-webscraper-kinesis/Pipfile.lock
+/aws-automated-webscraper-kinesis/Pipfile.lock
