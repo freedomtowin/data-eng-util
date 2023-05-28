@@ -2,6 +2,7 @@
 .vscode
 .DS_Store
 .env
+Pipfile.lock
 
 # ignore jupyter files
 jupyter
