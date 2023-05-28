@@ -1,8 +1,8 @@
 # ignore vscode directory
 .vscode
 .DS_Store
-.env
-Pipfile.lock
+*.env
+*.lock
 
 # ignore jupyter files
 jupyter
