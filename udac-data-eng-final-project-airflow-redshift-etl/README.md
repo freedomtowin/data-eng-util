@@ -2,7 +2,7 @@
 
 ## About 
 
-The data sources, for this project, were collected from Google Cloud Platform with BigQuery. A data pipeline, two data sources, was create for the Ethereum classic blockchain, i.e., blocks and transactions. All blocks and transactions in 2020 were collected.
+The data sources, for this project, were collected from Google Cloud Platform with BigQuery. A data pipeline, with two data sources, was created for the Ethereum classic blockchain, i.e., blocks and transactions. All blocks and transactions in 2020 were collected.
 
 Blocks are batches of transactions with a hash of the previous block in the chain. ... This prevents fraud, because one change in any block in history would invalidate all the following blocks as all subsequent hashes would change and everyone running the blockchain would notice.
 
@@ -141,3 +141,11 @@ Airflow has a scheduler that allows for job to be scheduled with CRON style comm
 ### The database needed to be accessed by 100+ people
 
 If multiple users need to access the databse at once, the number of cores/compute, in the AWS Redshift cluster, can also be scaled-up.
+
+
+### Launching a Redshift Cluster on AWS
+
+1. Create a new Redshift Role with AmazonS3ReadOnlyAccess
+2. Create a Security Group with a Custom Inbound TCP Rule Allowing Access on Port 5439
+3. Launch a Redshift Cluster With 1) Redshift Role 2) Redshift Security Group
+4. Make the cluster publicly accessible via the Action dropdown.
